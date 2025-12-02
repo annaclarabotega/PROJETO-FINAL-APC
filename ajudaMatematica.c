@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h> 
+#include <locale.h>
 
 int validar(float respostaAluno, float respostaCerta) {
     float diferenca = respostaAluno - respostaCerta;
+    setlocale(LC_ALL, "portuguese");
+    
     if (diferenca < 0) {
         diferenca = -diferenca;
     }

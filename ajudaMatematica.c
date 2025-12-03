@@ -27,17 +27,17 @@ int main() {
     float n1, n2, gabarito, resposta;
     setlocale(LC_ALL, "portuguese");
 
-    printf("=== PROJETO MATEMATICA ===\n");
-    printf("Acerte 5 questoes para passar de nivel.\n");
+    printf("=== PROJETO MATEMÁTICA ===\n");
+    printf("Acerte 5 questões para passar de nível.\n");
 
     do {
         printf("\n--- MENU DE FASES ---\n");
-        printf("Nivel Atual: %d\n", nivel);
+        printf("Nível Atual: %d\n", nivel);
         printf("1 - Soma\n");
-        printf("2 - Subtracao\n");
-        printf("3 - Multiplicacao\n");
-        printf("4 - Divisao\n");
-        printf("5 - Exponenciacao\n");
+        printf("2 - Subtração\n");
+        printf("3 - Multiplicação\n");
+        printf("4 - Divisão\n");
+        printf("5 - Exponenciação\n");
         printf("6 - Logaritmo\n");
         printf("0 - Sair\n");
         printf("Escolha: ");
@@ -48,7 +48,7 @@ int main() {
         }
 
         if (opcao > nivel) {
-            printf("\n[ERRO] Voce ainda nao desbloqueou essa fase!\n");
+            printf("\n[ERRO] Você ainda não desbloqueou essa fase!\n");
             printf("Termine a fase %d primeiro.\n", nivel);
             continue; 
         }
@@ -68,7 +68,7 @@ int main() {
                     }
                     
                     gabarito = n1 + n2;
-                    printf("%d) Quanto e %.0f + %.0f? ", i, n1, n2);
+                    printf("%d) Quanto é %.0f + %.0f? ", i, n1, n2);
                     scanf("%f", &resposta);
 
                     if (validar(resposta, gabarito) == 1) {
@@ -81,7 +81,7 @@ int main() {
                 break;
 
             case 2: // SUBTRACAO
-                printf("\n--- FASE 2: SUBTRACAO ---\n");
+                printf("\n--- FASE 2: SUBTRAÇÃO ---\n");
                 for(i = 1; i <= 5; i++) {
                     switch(i) {
                         case 1: n1 = 10; n2 = 5; break;
@@ -92,7 +92,7 @@ int main() {
                     }
 
                     gabarito = n1 - n2;
-                    printf("%d) Quanto e %.0f - %.0f? ", i, n1, n2);
+                    printf("%d) Quanto é %.0f - %.0f? ", i, n1, n2);
                     scanf("%f", &resposta);
 
                     if (validar(resposta, gabarito) == 1) {
@@ -105,7 +105,7 @@ int main() {
                 break;
 
             case 3: // MULTIPLICACAO
-                printf("\n--- FASE 3: MULTIPLICACAO ---\n");
+                printf("\n--- FASE 3: MULTIPLICAÇÃO ---\n");
                 for(i = 1; i <= 5; i++) {
                     switch(i) {
                         case 1: n1 = 2; n2 = 3; break;
@@ -116,7 +116,7 @@ int main() {
                     }
 
                     gabarito = n1 * n2;
-                    printf("%d) Quanto e %.0f x %.0f? ", i, n1, n2);
+                    printf("%d) Quanto é %.0f x %.0f? ", i, n1, n2);
                     scanf("%f", &resposta);
 
                     if (validar(resposta, gabarito) == 1) {
@@ -129,7 +129,7 @@ int main() {
                 break;
 
             case 4: // DIVISAO
-                printf("\n--- FASE 4: DIVISAO ---\n");
+                printf("\n--- FASE 4: DIVISÃO ---\n");
                 for(i = 1; i <= 5; i++) {
                     switch(i) {
                         case 1: n1 = 10; n2 = 2; break;
@@ -140,7 +140,7 @@ int main() {
                     }
 
                     gabarito = n1 / n2;
-                    printf("%d) Quanto e %.0f / %.0f? ", i, n1, n2);
+                    printf("%d) Quanto é %.0f / %.0f? ", i, n1, n2);
                     scanf("%f", &resposta);
 
                     if (validar(resposta, gabarito) == 1) {
@@ -153,7 +153,7 @@ int main() {
                 break;
 
             case 5: // EXPONENCIACAO
-                printf("\n--- FASE 5: POTENCIA ---\n");
+                printf("\n--- FASE 5: EXPONENCIAÇÃO ---\n");
                 for(i = 1; i <= 5; i++) {
                     switch(i) {
                         case 1: n1 = 2; n2 = 2; break; // 2^2
@@ -164,7 +164,7 @@ int main() {
                     }
 
                     gabarito = pow(n1, n2);
-                    printf("%d) Quanto e %.0f elevado a %.0f? ", i, n1, n2);
+                    printf("%d) Quanto é %.0f elevado a %.0f? ", i, n1, n2);
                     scanf("%f", &resposta);
 
                     if (validar(resposta, gabarito) == 1) {
@@ -201,21 +201,21 @@ int main() {
                 break;
 
             default:
-                printf("Opcao invalida!\n");
+                printf("Opção inválida!\n");
         }
 
         if (opcao >= 1 && opcao <= 6) {
             printf("\n--- RESULTADO FINAL DA FASE ---\n");
-            printf("Voce fez %d pontos de 5 possiveis.\n", pontos);
+            printf("Voce fez %d pontos de 5 possíveis.\n", pontos);
 
             if (pontos == 5) {
-                printf("PARABENS! Fase concluida.\n");
+                printf("PARABÉNS! Fase concluída.\n");
                 if (nivel == opcao && nivel < 6) {
                     nivel = nivel + 1;
-                    printf(">>> PROXIMO NIVEL LIBERADO! <<<\n");
+                    printf(">>> PRÓXIMO NÍVEL LIBERADO! <<<\n");
                 }
             } else {
-                printf("Voce precisa acertar TODAS (5) para passar de fase.\n");
+                printf("Você precisa acertar TODAS (5) para passar de fase.\n");
             }
         }
 

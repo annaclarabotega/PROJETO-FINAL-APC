@@ -4,7 +4,6 @@
 
 int validar(float respostaAluno, float respostaCerta) {
     float diferenca = respostaAluno - respostaCerta;
-    setlocale(LC_ALL, "portuguese");
     
     if (diferenca < 0) {
         diferenca = -diferenca;
@@ -26,6 +25,7 @@ int main() {
     int pontos;
     int i;
     float n1, n2, gabarito, resposta;
+    setlocale(LC_ALL, "portuguese");
 
     printf("=== PROJETO MATEMATICA ===\n");
     printf("Acerte 5 questoes para passar de nivel.\n");
